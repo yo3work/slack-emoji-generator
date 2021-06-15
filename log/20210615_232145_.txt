@@ -1,0 +1,7 @@
+感謝 output/kansha.png
+対応中 output/taiouchu.png
+がんばる output/gannbaru.png
+それは困った output/sorehakomatta.png
+それはナイス output/sorehanaisu.png
+これからやります output/korekarayarimasu.png
+グーグルに聞こう output/googlenikikou.png
