@@ -2,6 +2,7 @@ package main
 
 import (
     "bufio"
+    "flag"
     "fmt"
     "image"
     "image/color"
@@ -19,6 +20,8 @@ import (
 )
 
 func main() {
+    transparent := flag.Bool("t", false, "背景色を透明にします")
+    flag.Parse()
 
     // ログファイルの準備
     NowTime := time.Now()
@@ -57,7 +60,11 @@ func main() {
         // 画像背景色を決める
         for y := img.Rect.Min.Y; y < img.Rect.Max.Y; y++ {
             for x := img.Rect.Min.X; x < img.Rect.Max.X; x++ {
-                img.Set(x, y, color.RGBA{200, 200, 200, 200})
+                if *transparent {
+                    img.Set(x, y, color.RGBA{0, 0, 0, 0})
+                } else {
+                    img.Set(x, y, color.RGBA{200, 200, 200, 200})
+                }
             }
         }
 
